@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns the content to the right */
+    padding-right: 20px; /* Adds some padding on the right side */
+}
+
+nav ul {
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Use flexbox to align items horizontally */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px; /* Adds space between each list item */
+}
+
+nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets text color to white */
+    font-size: 16px;
+    padding: 10px 20px; /* Adds padding around links */
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Changes color on hover */
+}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .playlist {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: calc(33% - 20px); /* Adjust width for responsiveness */
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+        }
+
+        .playlist:hover {
+             transform: scale(1.05); /* Slightly enlarge the playlist on hover */
+             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increase shadow depth on hover */
+        }
+
+        .playlist img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .playlist h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .playlist p {
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            .playlist {
+                width: calc(50% - 20px); /* Adjust width for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .playlist {
+                width: 100%; /* Full width for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Playlists
+        <nav>
+            <ul>
+                <li><a href="./home.html">Browse</a></li>
+                <li><a href="./playlist.html">Playlists</a></li>
+                <li><a href="./register.html">Register</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="playlist">
+            <img src="./chill.png" alt="Playlist 1">
+            <h3>Chill Vibes</h3>
+            <p>Relaxing and mellow tunes for your downtime.</p>
+        </div>
+        <div class="playlist">
+            <img src="./beats.png" alt="Playlist 2">
+            <h3>Upbeat Hits</h3>
+            <p>Energetic tracks to get you moving.</p>
+        </div>
+        <div class="playlist">
+            <img src="./rocks.png" alt="Playlist 3">
+            <h3>Classic Rock</h3>
+            <p>Timeless rock anthems that never get old.</p>
+        </div>
+        <!-- Add more playlist items as needed -->
+    </div>
+</body>
+</html>

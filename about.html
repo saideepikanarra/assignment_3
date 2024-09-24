@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff); /* Linear gradient background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns the content to the right */
+    padding-right: 20px; /* Adds some padding on the right side */
+}
+
+nav ul {
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Use flexbox to align items horizontally */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px; /* Adds space between each list item */
+}
+
+nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets text color to white */
+    font-size: 16px;
+    padding: 10px 20px; /* Adds padding around links */
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Changes color on hover */
+}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .team-member {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px; /* Decreased width */
+            padding: 10px; /* Adjusted padding */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .team-member p {
+            color: #555;
+            font-size: 14px;
+        }
+        .team-member:hover {
+            transform: scale(1.05); /* Slightly enlarge the card on hover */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase shadow depth on hover */
+        }
+        @media (max-width: 768px) {
+            .team-member {
+                width: 100%; /* Full width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        About Us
+        <nav>
+            <ul>
+                <li><a href="./home.html">Browse</a></li>
+                <li><a href="./playlist.html">Playlists</a></li>
+                <li><a href="./register.html">Register</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Welcome to Our Music World!</h1>
+        <p id="intro-text">We are passionate about bringing the best music experience to our users. Our team is dedicated to curating playlists, discovering new artists, and creating a vibrant community for music lovers.</p>
+        <h2>Meet the Team</h2>
+        <div class="team" id="team-section">
+            <!-- Team member items will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Array of team members
+        const teamMembers = [
+            { name: 'Jane Doe', role: 'Founder & CEO', description: 'Music enthusiast with a passion for discovering new genres.', image: './a.png' },
+            { name: 'John Smith', role: 'Head of Curations', description: 'Expert in creating the perfect playlists for every mood.', image: './c.png' },
+            { name: 'Emily Davis', role: 'Community Manager', description: 'Loves connecting with music fans and organizing events.', image: './b.png' }
+        ];
+
+        // Function to create team member HTML
+        function createTeamMember(member) {
+            return `
+                <div class="team-member">
+                    <img src="${member.image}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                    <p>${member.description}</p>
+                </div>
+            `;
+        }
+
+        // Insert team members into the DOM
+        document.getElementById('team-section').innerHTML = teamMembers.map(createTeamMember).join('');
+
+        // Example DOM manipulation: Change introductory text on button click
+        const introText = document.getElementById('intro-text');
+        setTimeout(() => {
+            introText.innerHTML = 'We are thrilled to share our passion for music with you. Join us on this musical journey!';
+        }, 5000); // Change text after 5 seconds
+    </script>
+</body>
+</html>
